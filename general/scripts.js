@@ -1,7 +1,7 @@
 /* Info
 This file is a library of some useful javascript scripts, that you can easily add to your files.
 Simply add to your html file with the following line:
-<script language="JavaScript" type="text/javascript" charset="utf-8" src="/general/scripts.js">// Adds the mScripts object with some useful functions</script> */
+<script language="JavaScript" type="text/javascript" charset="utf-8" src="/general/scripts.js">// Adds the "scripts" object with some useful functions</script> */
 
 var scripts = {
 
