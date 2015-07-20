@@ -4,44 +4,48 @@
     <meta charset="utf-8">
     <title>MTG Deck Shuffler</title>
     <link href="style.css" rel="stylesheet">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js">
     </script>
   </head>
-  <body class="b">
-    <div id="page-left">
-      <div id="buttons">
-        <ul>
-          <li class="disabled" data-btn="shuffle" title="Shuffle deck">S</li>
-          <li class="disabled" data-btn="results" title="Display results">D</li>
-          <li class="disabled" data-btn="reset" title="Reset results">R</li>
-          <li data-btn="controls" title="View controls">C</li>
-          <li data-btn="options" title="View options">O</li>
-        </ul>
-      </div>
-      <div id="cardlist">
-        <textarea placeholder="Enter cardnames, each one on a separate line"></textarea>
-        <button>Generate cards</button>
-      </div>
-    </div>
-    <div id="page-div" title="Show more"><span>⇨⇨⇨</span></div>
-    <div id="page-right">
-      <div id="popups">
-        <div id="results">
-          <table></table>
-        </div>
-        <div id="options">
+  <body>
+    <div class="a" id="content">
+      <div class="left">
+        <div id="buttons">
           <ul>
-            <li>Highlight starting hand: <input type="checkbox" data-opt="1"></li>
-            <li>
-              <ul>
-                <li>Skip first draw: <input type="checkbox" data-opt="1.1"></li>
-              </ul>
-            </li>
+            <li class="disabled" data-btn="shuffle" title="Shuffle deck">S</li>
+            <li class="disabled" data-btn="results" title="Display results">D</li>
+            <li class="disabled" data-btn="reset" title="Reset results">R</li>
+            <li data-btn="controls" title="View controls">C</li>
+            <li data-btn="options" title="View options">O</li>
           </ul>
         </div>
+        <div id="popups">
+          <div id="results">
+            <table></table>
+          </div>
+          <div id="controls">
+          </div>
+          <div id="options">
+            <ul>
+              <li>Highlight starting hand: <input type="checkbox" data-opt="1"></li>
+              <li>
+                <ul>
+                  <li>Skip first draw: <input type="checkbox" data-opt="1.1"></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="cardlist">
+          <textarea autofocus placeholder="Enter cardnames, each one on a separate line" spellcheck="false"></textarea>
+          <button>Generate cards</button>
+        </div>
       </div>
-      <div id="cards">
-        <ul></ul>
+      <div class="middle" title="Show more"><span>⇨⇨⇨</span></div>
+      <div class="right">
+        <div id="cards">
+          <ul></ul>
+        </div>
       </div>
     </div>
     <script src="script.js"></script>

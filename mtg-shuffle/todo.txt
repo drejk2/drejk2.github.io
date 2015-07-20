@@ -2,6 +2,13 @@ format text windows to be ~80 char. long (in em; http://pxtoem.com)
 when page small enough, make cardlist clip to buttons and bottom (when body.a) or page-left + page-div fill whole page (when body.b)
 change colors (base, generate button, page-div, ...)
 complete transition from shuffler v1
-http://www.key-shortcut.com/en/writing-systems/symbols/arrows.html
 buttons have text inside when large enough, otherwise signs/images
-set elements to initial / inherit where possible
+add information on accepted input formats (space between number and cardname)
+too much space on the right when #content.c
+scrollbars interfere with page when page too small
+make #content > .left horizontally resizable when #content.b
+if text in #cardlist doesn't need that much horizontal space, make it slimmer
+mess around with textarea:focus styling (now there's blue border)
+make fallbacks for uncommonly supported features, switched off js, warnings for users with obsolete browsers
+put textarea into form and enable submit
+https://developers.google.com/speed/libraries/#jquery-mobile & https://developers.google.com/speed/libraries/#jquery-ui

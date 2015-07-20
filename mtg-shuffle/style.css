@@ -1,16 +1,21 @@
+/* Elements */
+
 * {
   border: 0;
-  font-family: Arial;
-  font-size: 100%;
   margin: 0;
   padding: 0;
 }
 
-body,
-html {
+body {
+  font-size: 100%;
   height: 100%;
   min-height: 240px;
   min-width: 240px;
+  width: 100%;
+}
+
+html {
+  height: 100%;
   width: 100%;
 }
 
@@ -18,11 +23,26 @@ ul {
   list-style: none;
 }
 
+/* --- */
+
+/* Default body: #content */
+
+#content {
+  height: 100%;
+  width: 100%;
+}
+
+#content > div {
+  float: left;
+  height: 100%;
+}
+
+/* Default body: #context > .left */
 
 #buttons {
   border-bottom: 1px solid #dddddd;
   box-sizing: border-box;
-  height: 2em;
+  height: 2rem;
   width: 100%;
 }
 
@@ -49,15 +69,13 @@ ul {
 
 #cardlist button {
   cursor: pointer;
-  height: 2em;
+  height: 2rem;
   width: 100%;
 }
 
 #cardlist textarea {
-  border: 1px solid #dddddd;
-  box-sizing: border-box;
   display: block;
-  height: calc(100% - 2em);
+  height: calc(100% - 2rem);
   overflow: auto;
   resize: none;
   white-space: nowrap;
@@ -70,39 +88,13 @@ ul {
   }
 }
 
-#cards img {
-  height: 319px;
-  margin: 0 1px 1px 0;
-  width: 222px;
-}
-
-#cards li {
-  display: inline;
-}
-
 #options ul ul {
-  margin-left: 2.5em;
-}
-
-#page-div {
-  background-color: #dddddd;
-  cursor: pointer;
-  display: inline-table;
-  font-size: 75%;
-  height: 100%;
-  width: 1em;
-  word-break: break-all;
-  word-break: break-word;
-}
-
-#page-div span {
-  display: table-cell;
-  text-align: center;
-  vertical-align: middle;
+  margin-left: 2.5rem;
 }
 
 #popups > div {
   background-color: #ffffff;
+  display: none;
   opacity: 0.95;
   position: fixed;
 }
@@ -121,75 +113,127 @@ ul {
   width: 100%;
 }
 
-body.a #cardlist {
-  height: calc((100% - 2em) / 100 * 75);
+/* Default body: #context > .middle */
+
+#content > .middle {
+  background-color: #dddddd;
+  cursor: pointer;
+  display: table;
+  height: 100%;
+  width: 1rem;
+  word-break: break-all;
+  word-break: break-word;
+}
+
+#content > .middle span {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* Default body: #context > .right */
+
+#cards {
+  height: 100%;
+  overflow: auto;
+  width: 100%;
+}
+
+#cards img {
+  height: 319px;
+  margin: 0 1px 1px 0;
+  vertical-align: top;
+  width: 222px;
+}
+
+#cards li {
+  display: inline-block;
+}
+
+#cards ul {
+  text-align: center;
+}
+
+/* content.a */
+
+#content.a > .left {
+  width: 100%;
+}
+
+#content.a > .middle,
+#content.a > .right {
+ display: none;
+}
+
+#content.a #cardlist {
+  height: calc((100% - 2rem) / 100 * 75);
   margin: 0 auto 0 auto;
   position: relative;
-  top: calc((100% - 2em) / 100 * 12.5);
-  width: 22.5em;
+  top: calc((100% - 2rem) / 100 * 12.5);
+  width: 22.5rem;
 }
 
 @media all and (max-height: 640px) {
-  body.a #cardlist {
+  #content.a #cardlist {
     height: 456px;
-    top: calc((100% - 2em - 456px) / 2);
+    top: calc((100% - 2rem - 456px) / 2);
   }
 }
 
+#content.a #cardlist textarea {
+  border: 1px solid #dddddd;
+  box-sizing: border-box;
+}
+
 @media all and (max-height: 488px) {
-  body.a #cardlist {
-    height: calc(100% - 2em);
+  #content.a #cardlist {
+    height: calc(100% - 2rem);
     position: initial;
     top: 0;
   }
 }
 
 @media all and (max-width: 360px) {
-  body.a #cardlist {
+  #content.a #cardlist {
     margin: 0;
     width: 100%;
   }
 }
 
-body.a #page-div {
-  display: none;
-}
-
-body.a #page-left {
-  height: 100%;
+#content.a #popups {
+  height: calc(100% - 2rem);
+  position: absolute;
+  top: 2rem;
   width: 100%;
 }
 
-body.a #page-right {
-  display: none;
-}
+/* #content.b */
 
-body.b #cardlist {
-  height: calc(100% - 2em);
+#content.b #cardlist {
+  height: calc(100% - 2rem);
   width: 100%;
 }
 
-body.b #page-left {
-  display: inline;
-  float: left;
-  height: 100%;
-  width: 22.5em;
+#content.b > .left {
+  width: 22.5rem;
 }
 
 @media all and (max-width: 372px) {
-  body.b #page-left {
-    width: calc(100% - 1em);
+  #content.b > .left {
+    width: calc(100% - 1rem);
   }
 }
 
-body.b #page-right {
-  display: inline;
-  float: right;
-  height: 100%;
-  width: calc(100% - 23.5em);
+#content.b > .right {
+  width: calc(100% - 23.5rem);
 }
 
-body.b #cards,
-body.b #popups {
+/* content.c */
+
+#content.c > .left {
   display: none;
+}
+
+#content.c > .right {
+  width: calc(100% - 1rem);
 }
