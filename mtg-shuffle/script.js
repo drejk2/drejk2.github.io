@@ -1,4 +1,15 @@
-var cards, checkKey, prepPage, scriptReady, UIn;
+var cards, checkKey, prepPage, scriptReady, shuffleArray, shuffleCards, UIn;
+
+shuffleArray = function(array) {
+    var i, j, temp;
+    for (i = array.length - 1; i > 0; i--) {
+        j = Math.floor(Math.random() * (i + 1));
+        temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+    return array;
+};
 
 scriptReady = function() {
     prepPage();
@@ -47,7 +58,7 @@ UIn = {
                 alert('results');
                 break;
             case 'shuffle':
-                alert('shuffle');
+                shuffleCards();
                 break;
         }
     },
@@ -122,12 +133,12 @@ cards = function() {
     }
     cards.img = [];
     for (i = 0; i < cards.code.length; i++) {
-        cards.img.push('http://gatherer.wizards.com/Handlers/Image.ashx?type=' +
+        cards.img.push('//gatherer.wizards.com/Handlers/Image.ashx?type=' +
         'card&name=' + cards.code[i]);
     }
     cards.url = [];
     for (i = 0; i < cards.code.length; i++) {
-        cards.url.push('http://gatherer.wizards.com/Pages/Card/Details.aspx' +
+        cards.url.push('//gatherer.wizards.com/Pages/Card/Details.aspx' +
         '?type=card&name=' + cards.code[i]);
     }
     $('#cards ul').html('');
@@ -149,6 +160,14 @@ cards = function() {
         li.append(a);
         $('#cards ul').append(li);
     }
+};
+shuffleCards = function() {
+    var cardsNew = [], cardsOld = [];
+    cardsOld = $("#cards ul li");
+    cardsNew = cardsOld.clone(true);
+    cardsOld.remove();
+    shuffleArray(cardsNew);
+    $("#cards ul").append(cardsNew);
 };
 
 scriptReady();
