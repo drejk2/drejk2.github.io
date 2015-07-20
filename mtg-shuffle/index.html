@@ -2,46 +2,48 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>MTG Deck shuffler</title>
-    <link href="style_1.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js">
+    <title>MTG Deck Shuffler</title>
+    <link href="style.css" rel="stylesheet">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js">
     </script>
   </head>
-  <body>
-    <div id="contentwrap">
-      <div id="popups">
-        <table id="resulttable">
-          <thead></thead>
-          <tbody></tbody>
-        </table>
-        <ul id="options">
-          <li id="controls">
-            <h3>Controls</h3>
-            <ul>
-              <li>Shuffle deck: <span data-key="shuffle">___</span></li>
-              <li>Show results: <span data-key="results">___</span></li>
-            </ul>
-          </li>
-          <li>
-            <h3>Other</h3>
-            <ul>
-              <li>Highlight starting hand: <input type="checkbox" data-opt="1"></li>
-              <li>
-                <ul>
-                  <li>Skip first draw: <input type="checkbox" data-opt="1.1"></li>
-                </ul>
-              </li>
-            </ul>
-          </li>
+  <body class="b">
+    <div id="page-left">
+      <div id="buttons">
+        <ul>
+          <li class="disabled" data-btn="shuffle" title="Shuffle deck">S</li>
+          <li class="disabled" data-btn="results" title="Display results">D</li>
+          <li class="disabled" data-btn="reset" title="Reset results">R</li>
+          <li data-btn="controls" title="View controls">C</li>
+          <li data-btn="options" title="View options">O</li>
         </ul>
       </div>
-      <div id="cardlist-form">
-        <textarea id="cardlist-input"
-        placeholder="Enter cardnames, each one on a separate line"></textarea>
-        <button id="cardlist-button">Generate cards</button>
+      <div id="cardlist">
+        <textarea placeholder="Enter cardnames, each one on a separate line"></textarea>
+        <button>Generate cards</button>
       </div>
-      <ul id="cards"></ul>
     </div>
-    <script src="script_1.js"></script>
+    <div id="page-div" title="Show more"><span>⇨⇨⇨</span></div>
+    <div id="page-right">
+      <div id="popups">
+        <div id="results">
+          <table></table>
+        </div>
+        <div id="options">
+          <ul>
+            <li>Highlight starting hand: <input type="checkbox" data-opt="1"></li>
+            <li>
+              <ul>
+                <li>Skip first draw: <input type="checkbox" data-opt="1.1"></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div id="cards">
+        <ul></ul>
+      </div>
+    </div>
+    <script src="script.js"></script>
   </body>
 </html>

@@ -1,0 +1,195 @@
+* {
+  border: 0;
+  font-family: Arial;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  height: 100%;
+  min-height: 240px;
+  min-width: 240px;
+  width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+
+#buttons {
+  border-bottom: 1px solid #dddddd;
+  box-sizing: border-box;
+  height: 2em;
+  width: 100%;
+}
+
+#buttons li {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+
+#buttons li:not(.disabled) {
+  cursor: pointer;
+}
+
+#buttons li:not(.disabled):hover {
+  background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25));
+}
+
+#buttons ul {
+  display: table;
+  height: 100%;
+  table-layout: fixed;
+  width: 100%;
+}
+
+#cardlist button {
+  cursor: pointer;
+  height: 2em;
+  width: 100%;
+}
+
+#cardlist textarea {
+  border: 1px solid #dddddd;
+  box-sizing: border-box;
+  display: block;
+  height: calc(100% - 2em);
+  overflow: auto;
+  resize: none;
+  white-space: nowrap;
+  width: 100%;
+}
+
+@media all and (max-width: 260px) {
+  #cardlist textarea {
+    white-space: initial;
+  }
+}
+
+#cards img {
+  height: 319px;
+  margin: 0 1px 1px 0;
+  width: 222px;
+}
+
+#cards li {
+  display: inline;
+}
+
+#options ul ul {
+  margin-left: 2.5em;
+}
+
+#page-div {
+  background-color: #dddddd;
+  cursor: pointer;
+  display: inline-table;
+  font-size: 75%;
+  height: 100%;
+  width: 1em;
+  word-break: break-all;
+  word-break: break-word;
+}
+
+#page-div span {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+
+#popups > div {
+  background-color: #ffffff;
+  opacity: 0.95;
+  position: fixed;
+}
+
+#results {
+  height: 90%;
+  left: 5%;
+  top: 5%;
+  width: 90%;
+}
+
+#results table {
+  display: block;
+  height: 100%;
+  overflow: auto;
+  width: 100%;
+}
+
+body.a #cardlist {
+  height: calc((100% - 2em) / 100 * 75);
+  margin: 0 auto 0 auto;
+  position: relative;
+  top: calc((100% - 2em) / 100 * 12.5);
+  width: 22.5em;
+}
+
+@media all and (max-height: 640px) {
+  body.a #cardlist {
+    height: 456px;
+    top: calc((100% - 2em - 456px) / 2);
+  }
+}
+
+@media all and (max-height: 488px) {
+  body.a #cardlist {
+    height: calc(100% - 2em);
+    position: initial;
+    top: 0;
+  }
+}
+
+@media all and (max-width: 360px) {
+  body.a #cardlist {
+    margin: 0;
+    width: 100%;
+  }
+}
+
+body.a #page-div {
+  display: none;
+}
+
+body.a #page-left {
+  height: 100%;
+  width: 100%;
+}
+
+body.a #page-right {
+  display: none;
+}
+
+body.b #cardlist {
+  height: calc(100% - 2em);
+  width: 100%;
+}
+
+body.b #page-left {
+  display: inline;
+  float: left;
+  height: 100%;
+  width: 22.5em;
+}
+
+@media all and (max-width: 372px) {
+  body.b #page-left {
+    width: calc(100% - 1em);
+  }
+}
+
+body.b #page-right {
+  display: inline;
+  float: right;
+  height: 100%;
+  width: calc(100% - 23.5em);
+}
+
+body.b #cards,
+body.b #popups {
+  display: none;
+}

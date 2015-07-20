@@ -1,0 +1,7 @@
+format text windows to be ~80 char. long (in em; http://pxtoem.com)
+when page small enough, make cardlist clip to buttons and bottom (when body.a) or page-left + page-div fill whole page (when body.b)
+change colors (base, generate button, page-div, ...)
+complete transition from shuffler v1
+http://www.key-shortcut.com/en/writing-systems/symbols/arrows.html
+buttons have text inside when large enough, otherwise signs/images
+set elements to initial / inherit where possible
