@@ -1,0 +1,5 @@
+! The "li" for each card is 5 px taller than each image
+! Result table formatting messed up
++ Add an option to disable links (http://stackoverflow.com/a/13977403)
++ Add option to enter multiple cards with numbers (4 Black Lotus)
++ Check code with JSHint, JSLint & W3C Validator

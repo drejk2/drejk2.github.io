@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>MTG Deck shuffler</title>
+    <link href="style_1.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js">
+    </script>
+  </head>
+  <body>
+    <div id="contentwrap">
+      <div id="popups">
+        <table id="resulttable">
+          <thead></thead>
+          <tbody></tbody>
+        </table>
+        <ul id="options">
+          <li id="controls">
+            <h3>Controls</h3>
+            <ul>
+              <li>Shuffle deck: <span data-key="shuffle">___</span></li>
+              <li>Show results: <span data-key="results">___</span></li>
+            </ul>
+          </li>
+          <li>
+            <h3>Other</h3>
+            <ul>
+              <li>Highlight starting hand: <input type="checkbox" data-opt="1"></li>
+              <li>
+                <ul>
+                  <li>Skip first draw: <input type="checkbox" data-opt="1.1"></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div id="cardlist-form">
+        <textarea id="cardlist-input"
+        placeholder="Enter cardnames, each one on a separate line"></textarea>
+        <button id="cardlist-button">Generate cards</button>
+      </div>
+      <ul id="cards"></ul>
+    </div>
+    <script src="script_1.js"></script>
+  </body>
+</html>
