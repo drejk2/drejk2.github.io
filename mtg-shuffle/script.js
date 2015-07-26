@@ -1,4 +1,4 @@
-var cards, checkKey, prepPage, scriptReady, shuffleArray, shuffleCards, UIn;
+var cards, checkKey, options, prepPage, scriptReady, shuffleArray, shuffleCards, UIn;
 
 shuffleArray = function(array) {
     var i, j, temp;
@@ -12,7 +12,26 @@ shuffleArray = function(array) {
 };
 
 scriptReady = function() {
+    options.get();
     prepPage();
+};
+options = {
+    // ' _
+    default_: {
+        hlSHand: false,
+        results: true,
+        skip1Draw: false
+    },
+    get: function() {
+        if (localStorage.getItem('options') == null) {
+            options._ = options.default_;
+        } else {
+            options._ = JSON.parse(localStorage.getItem('options'));
+        }
+    },
+    set: function() {
+        localStorage.setItem('options', JSON.stringify(options._));
+    }
 };
 prepPage = function() {
     $('#buttons li').on('click', function() {
@@ -20,8 +39,11 @@ prepPage = function() {
                 UIn.actions($(this).data('btn'));
             }
         });
+    $('#options input').on('change', function() {
+            options._[$(this).data('opt')] = $(this).prop('checked');
+        });
     $(window).on('keydown', function() {
-            if ($("#cardlist textarea").is(":focus") == false) {
+            if ($('#cardlist textarea').is(':focus') == false) {
                 checkKey(event, UIn.controls, UIn.actions);
             }
         });
@@ -133,12 +155,12 @@ cards = function() {
     }
     cards.img = [];
     for (i = 0; i < cards.code.length; i++) {
-        cards.img.push('//gatherer.wizards.com/Handlers/Image.ashx?type=' +
+        cards.img.push('http://gatherer.wizards.com/Handlers/Image.ashx?type=' +
         'card&name=' + cards.code[i]);
     }
     cards.url = [];
     for (i = 0; i < cards.code.length; i++) {
-        cards.url.push('//gatherer.wizards.com/Pages/Card/Details.aspx' +
+        cards.url.push('http://gatherer.wizards.com/Pages/Card/Details.aspx' +
         '?type=card&name=' + cards.code[i]);
     }
     $('#cards ul').html('');

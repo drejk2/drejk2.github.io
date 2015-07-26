@@ -2,10 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>MTG Deck Shuffler</title>
+    <title>MTG Deck Shuffler</title>)
+    <script src="/app/google_analytics.js"></script>
     <link href="style.css" rel="stylesheet">
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js">
-    </script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <meta name="description" content="Shuffle MTG cards online with images.">
+    <meta name="keywords" content="MTG, Magic, Magic: The Gathering, shuffle, cards, online shuffle">
   </head>
   <body>
     <div class="a" id="content">
@@ -27,12 +29,13 @@
           </div>
           <div id="options">
             <ul>
-              <li>Highlight starting hand: <input type="checkbox" data-opt="1"></li>
+              <li>Highlight starting hand: <input type="checkbox" data-opt="hlSHand"></li>
               <li>
                 <ul>
-                  <li>Skip first draw: <input type="checkbox" data-opt="1.1"></li>
+                  <li>Skip first draw: <input type="checkbox" data-opt="skip1Draw"></li>
                 </ul>
               </li>
+              <li>Record results: <input checked type="checkbox" data-opt="results"></li>
             </ul>
           </div>
         </div>
@@ -46,6 +49,20 @@
         <div id="cards">
           <ul></ul>
         </div>
+        <!--
+        <div id="cards-overlay">
+          <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+        -->
       </div>
     </div>
     <script src="script.js"></script>

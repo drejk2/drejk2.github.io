@@ -1,0 +1,46 @@
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 100%;
+}
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+#work,
+#work a {
+  display: table;
+  height: 100%;
+  table-layout: fixed;
+  width: 100%;
+}
+
+#work a {
+  text-decoration: none;
+}
+
+#work a[href='//drejk2.github.io/mtg-shuffle'] {
+  background-color: #dddddd;
+}
+
+#work a[href='//github.com/drejk2/drejk2.github.io'] {
+  background-color: #171516;
+}
+
+#work li,
+#work span {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
