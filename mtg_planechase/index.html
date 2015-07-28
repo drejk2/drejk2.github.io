@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>MTG Planechase</title>
+    <script src="/app/google_analytics.js"></script>
+    <link href="style.css" rel="stylesheet">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="a" id="content">
+      <div class="left">
+        <div id="buttons">
+          <ul>
+            <li class="disabled" data-btn="add" title="Add a card">A</li>
+            <li class="disabled" data-btn="draw" title="Draw a card">D</li>
+          </ul>
+        </div>
+        <div id="cardlist">
+          <textarea autofocus placeholder="Enter cardnames, each one on a separate line" spellcheck="false"></textarea>
+          <button>Generate cards</button>
+        </div>
+      </div>
+      <div class="middle" title="Show more"><span>⇨⇨⇨</span></div>
+      <div class="right">
+        <div id="cards">
+          <ul></ul>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

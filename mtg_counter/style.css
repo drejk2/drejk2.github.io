@@ -1,0 +1,79 @@
+/* Elements */
+
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 100%;
+  height: 100%;
+  width: 100%;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+/* --- */
+
+body.a #counter {
+  display: none;
+}
+
+body.b #generate {
+  display: none;
+}
+
+#counter,
+#counter > li > ul ,
+#generate,
+#generate > li > ul {
+  display: table;
+  height: 100%;
+  table-layout: fixed;
+  width: 100%;
+}
+
+#counter > li,
+#generate > li {
+  display: table-row;
+}
+
+#counter > li > ul > li,
+#generate > li > ul > li {
+  display: table-cell;
+}
+
+#counter button,
+#counter input,
+#generate button,
+#generate input{
+  display: inline-block;
+  height: 100%;
+  text-align: center;
+  vertical-align: middle;
+  width: 100%;
+}
+
+#counter input.ded {
+  background-color: red;
+}
+
+#generate div {
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+
+#generate label  {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
