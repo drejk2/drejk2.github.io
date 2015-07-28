@@ -88,6 +88,10 @@ ul {
   }
 }
 
+#planechaselist {
+  display: none;
+}
+
 /* Default body: #content > .middle */
 
 #content > .middle {

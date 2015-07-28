@@ -1,4 +1,4 @@
-var cards, cardsS /* [img, name, url, x] */, checkKey, draw, prepPage, scriptReady, shuffleArray, UIn;
+var cards, cardsS /* [img, name, url, x] */, checkKey, draw, insert, prepPage, scriptReady, shuffleArray, UIn;
 
 shuffleArray = function(array) {
     var i, j, temp;
@@ -43,6 +43,9 @@ prepPage = function() {
             $('#cardlist textarea').focus();
         });
 };
+insert = function() {
+    $('#cardlist textarea').val($('#planechaselist').text());
+};
 UIn = {
     actions: function(trigger) {
         switch(trigger) {
@@ -51,6 +54,9 @@ UIn = {
                 break;
             case 'add':
                 draw(2);
+                break;
+            case 'insert':
+                insert();
                 break;
         }
     },

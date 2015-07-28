@@ -19,7 +19,8 @@ ul {
 }
 
 #work,
-#work a {
+#work a,
+#work ul {
   display: table;
   height: 100%;
   table-layout: fixed;
@@ -34,11 +35,23 @@ ul {
   background-color: #dddddd;
 }
 
+#work a[href='//drejk2.github.io/mtg_planechase'] {
+  background-color: #debc82;
+}
+
+#work a[href='//drejk2.github.io/mtg_counter'] {
+  background-color: #abfeff;
+}
+
 #work a[href='//github.com/drejk2/drejk2.github.io'] {
   background-color: #171516;
 }
 
-#work li,
+#work > li {
+  display: table-row;
+}
+
+#work ul > li,
 #work span {
   display: table-cell;
   text-align: center;
